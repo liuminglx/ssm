@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="/ssm/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/ssm/css/test.css">
+    <title>首页</title>
+</head>
+<body>
+<nav class="nav">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+            <ul class="nav-ul-l">
+                <li class="nav-ul-li-l">
+                    <a href="login.jsp" target="name">
+                        <span id="denglu">登录</span>
+                    </a>
+                </li>
+                <li class="nav-ul-li-l">
+                    <a href="register.html">
+                        <span id="zhuce">注册</span>
+                    </a>
+                </li>
+                <li class="dropdown nav-ul-li-l" id="nav-ul-li-l">
+                    <a href="" class="title" onmouseover="dropup()">
+                        <img id="dropimg" src="/ssm/images/down.png">
+                        <span id="shangjia">商家管理</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                <span class="nav-ul-r">
+                    <a href="login.jsp">
+                        <span>请登录</span>
+                    </a>
+                </span>
+        </div>
+    </div>
+    <ul class="dropdown-menu" id="dropdown-menu">
+        <li class="xl" onmouseleave="dropdown()">
+            <div class="xldiv-l">
+                <a href="login.jsp">
+                    <img class="xltp-l" src="/ssm/images/timg.png">
+                    <span class="xlsp-l">查询</span>
+                </a>
+            </div>
+            <div class="xldiv-r">
+                <a href="login.jsp">
+                    <img class="xltp-r" src="/ssm/images/zj.png">
+                    <span class="xlsp-r">添加</span>
+                </a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<script src="/ssm/js/test.js"></script>
+<script src="/ssm/js/jquery1.12.4.min.js"></script>
+<script src="/ssm/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <link rel="stylesheet" href="/ssm/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/ssm/css/test.css">
+    <title>首页</title>
+</head>
+<body onload="clock()">
+<div class="test">
+    <header class="head">
+        <div class="row head-div">
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 head-l">
+                <a href="test.html">
+                    <img src="/ssm/images/logo.png"/>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 head-m">
+                <span>商家管理系统</span>
+            </div>
+            <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4 head-r">
+                <span id="span-time">时间</span>
+            </div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                <ul class="nav-ul-l">
+                    <li class="nav-ul-li-l">
+                        <a href="login.jsp">
+                            <span id="denglu">登录</span>
+                        </a>
+                    </li>
+                    <li class="nav-ul-li-l">
+                        <a href="register.jsp">
+                            <span id="zhuce">注册</span>
+                        </a>
+                    </li>
+                    <li class="dropdown nav-ul-li-l" id="nav-ul-li-l">
+                        <a href="" class="title" onmouseover="dropup()">
+                            <img id="dropimg" src="/ssm/images/down.png">
+                            <span id="shangjia">商家管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                <span class="nav-ul-r">
+                    <a href="login.jsp">
+                        <span>请登录</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <ul class="dropdown-menu" id="dropdown-menu">
+            <li class="xl" onmouseleave="dropdown()">
+                <div class="xldiv-l">
+                    <a href="login.jsp" onclick="sclick()">
+                        <img class="xltp-l" src="/ssm/images/timg.png">
+                        <span class="xlsp-l">查询</span>
+                    </a>
+                </div>
+                <div class="xldiv-r">
+                    <a href="login.jsp" onclick="iclick()">
+                        <img class="xltp-r" src="/ssm/images/zj.png">
+                        <span class="xlsp-r">添加</span>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="ddiv">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="/ssm/images/image_17.png" alt="没有图片">
+
+                </div>
+                <div class="item">
+                    <img src="/ssm/images/image_05.png" alt="没有图片">
+
+                </div>
+                <div class="item">
+                    <img src="/ssm/images/image_11.png" alt="没有图片">
+
+                </div>
+                <div class="item">
+                    <img src="/ssm/images/image_23.png" alt="没有图片">
+
+                </div>
+            </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            </a>
+        </div>
+    </div>
+    <footer class="foot">
+        <div class="row foot-div">
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                <ul class="foot-div-l">
+                    <li>
+                        <img src="/ssm/images/wx.png"/>
+                    </li>
+                    <li>
+                        <span>Copyright @ 2017 知润.All Rights Reserved</span>
+                    </li>
+                    <li>
+                        <span>关于我们</span>
+                        <span class="foot-span">关于我们</span>
+                        <span class="foot-span">关于我们</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                <ul class="foot-div-r">
+                    <li>
+                        <span>关注微信公众号</span>
+                    </li>
+                    <li>
+                        <img src="/ssm/images/ewm.png">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="/ssm/js/jquery1.12.4.min.js"></script>
+<script src="/ssm/js/bootstrap.min.js"></script>
+<script src="/ssm/js/test.js"></script>
+</body>
+</html>

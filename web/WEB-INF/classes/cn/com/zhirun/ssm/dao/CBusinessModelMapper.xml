@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.zhirun.ssm.dao.CBusinessModelMapper">
+    <resultMap id="BaseResultMap" type="cn.com.zhirun.ssm.model.BusinessModel">
+        <id column="bns_id" jdbcType="VARCHAR" property="bnsId"/>
+        <result column="bns_name" jdbcType="VARCHAR" property="bnsName"/>
+        <result column="bns_tel" jdbcType="VARCHAR" property="bnsTel"/>
+        <result column="bns_group" jdbcType="VARCHAR" property="bnsGroup"/>
+        <result column="bns_area" jdbcType="VARCHAR" property="bnsArea"/>
+        <result column="bns_addr" jdbcType="VARCHAR" property="bnsAddr"/>
+        <result column="bns_money" jdbcType="DOUBLE" property="bnsMoney"/>
+        <result column="bns_create_date" jdbcType="VARCHAR" property="bnsCreateDate"/>
+        <result column="bns_update_date" jdbcType="VARCHAR" property="bnsUpdateDate"/>
+        <result column="bns_deleflg" jdbcType="INTEGER" property="bnsDeleflg"/>
+        <result column="bns_comment" jdbcType="VARCHAR" property="bnsComment"/>
+    </resultMap>
+
+    <select id="checkBusinessByName" resultType="java.lang.Integer" parameterType="BusinessModel">
+        select count(*) count from t_business_test where bns_name=#{bnsName} limit 1
+  </select>
+
+    <!--<select id="selectPage" resultType="java.lang.Integer" parameterType="BusinessModel">-->
+        <!--select count(*) from t_business_test where bns_deleflg = 0-->
+        <!--<if test="bns.bnsId != null and bns.bnsId != ''">-->
+            <!--and bns_id like "%"#{bns.bnsId}"%"-->
+        <!--</if>-->
+        <!--<if test="bns.bnsName != null and bns.bnsName != ''">-->
+            <!--and bns_name like "%"#{bns.bnsName}"%"-->
+        <!--</if>-->
+        <!--<if test="bns.bnsTel != null and bns.bnsTel != ''">-->
+            <!--and bns_tel = #{bns.bnsTel}-->
+        <!--</if>-->
+        <!--<if test="bns.bnsGroup != null and bns.bnsGroup != ''">-->
+            <!--and bns_group = #{bns.bnsGroup}-->
+        <!--</if>-->
+        <!--<if test="bns.bnsArea != null and bns.bnsArea != ''">-->
+            <!--and bns_area = #{bns.bnsArea}-->
+        <!--</if>-->
+        <!--<if test="bns.bnsAddr != null and bns.bnsAddr != ''">-->
+            <!--and bns_addr like "%"#{bns.bnsAddr}"%"-->
+        <!--</if>-->
+        <!--<if test="bns.bnsMoneyFrom != null and bns.bnsMoneyFrom != 0.0">-->
+            <!--<![CDATA[-->
+            <!--and bns_money >= #{bns.bnsMoneyFrom}-->
+            <!--]]>-->
+        <!--</if>-->
+        <!--<if test="bns.bnsMoneyTo != null and bns.bnsMoneyTo != 0.0">-->
+            <!--<![CDATA[-->
+            <!--and bns_money <= #{bns.bnsMoneyTo}-->
+            <!--]]>-->
+        <!--</if>-->
+    <!--</select>-->
+
+    <select id="selectPage" resultType="java.lang.Integer" parameterType="BusinessModel">
+        select count(*) from t_business_test where bns_deleflg = 0
+        <if test="bnsId != null and bnsId != ''">
+            and bns_id like "%"#{bnsId}"%"
+        </if>
+        <if test="bnsName != null and bnsName != ''">
+            and bns_name like "%"#{bnsName}"%"
+        </if>
+        <if test="bnsTel != null and bnsTel != ''">
+            and bns_tel = #{bnsTel}
+        </if>
+        <if test="bnsGroup != null and bnsGroup != ''">
+            and bns_group = #{bnsGroup}
+        </if>
+        <if test="bnsArea != null and bnsArea != ''">
+            and bns_area = #{bnsArea}
+        </if>
+        <if test="bnsAddr != null and bnsAddr != ''">
+            and bns_addr like "%"#{bnsAddr}"%"
+        </if>
+        <if test="bnsMoneyFrom != null and bnsMoneyFrom != 0.0">
+            <![CDATA[
+            and bns_money >= #{bnsMoneyFrom}
+            ]]>
+        </if>
+        <if test="bnsMoneyTo != null and bnsMoneyTo != 0.0">
+            <![CDATA[
+            and bns_money <= #{bnsMoneyTo}
+            ]]>
+        </if>
+    </select>
+
+    <select id="selectByPage" resultType="BusinessModel">
+        select
+        bns_id bnsId,bns_name bnsName,bns_tel bnsTel,bns_group bnsGroup,bns_area bnsArea,bns_addr bnsAddr,bns_money
+        bnsMoney
+        from t_business_test where bns_deleflg = 0
+        <if test="pbns.bnsId != null and pbns.bnsId != ''">
+            and bns_id like "%"#{pbns.bnsId}"%"
+        </if>
+        <if test="pbns.bnsName != null and pbns.bnsName != ''">
+            and bns_name like "%"#{pbns.bnsName}"%"
+        </if>
+        <if test="pbns.bnsTel != null and pbns.bnsTel != ''">
+            and bns_tel = #{pbns.bnsTel}
+        </if>
+        <if test="pbns.bnsGroup != null and pbns.bnsGroup != ''">
+            and bns_group = #{pbns.bnsGroup}
+        </if>
+        <if test="pbns.bnsArea != null and pbns.bnsArea != ''">
+            and bns_area = #{pbns.bnsArea}
+        </if>
+        <if test="pbns.bnsAddr != null and pbns.bnsAddr != ''">
+            and bns_addr like "%"#{pbns.bnsAddr}"%"
+        </if>
+        <if test="pbns.bnsMoneyFrom != null and pbns.bnsMoneyFrom != 0.0">
+            <![CDATA[
+            and bns_money  >= #{pbns.bnsMoneyFrom}
+            ]]>
+        </if>
+        <if test="pbns.bnsMoneyTo != null and pbns.bnsMoneyTo != 0.0">
+            <![CDATA[
+            and bns_money <= #{pbns.bnsMoneyTo}
+            ]]>
+        </if>
+        limit #{pcount},#{ppage}
+    </select>
+
+    <update id="deleteBusiness" parameterType="BusinessModel">
+        update t_business_test set bns_deleflg = 1
+        where bns_id = #{bnsId}
+    </update>
+
+    <update id="updateBusiness" parameterType="BusinessModel">
+        update t_business_test
+        set bns_name = #{bnsName},
+        bns_tel = #{bnsTel},
+        bns_group = #{bnsGroup},
+        bns_area = #{bnsArea},
+        bns_addr = #{bnsAddr},
+        bns_money = #{bnsMoney},
+        bns_update_date = #{bnsUpdateDate}
+        where bns_id = #{bnsId}
+        and (bns_name != #{bnsName}
+        or bns_tel != #{bnsTel}
+        or bns_group != #{bnsGroup}
+        or bns_area != #{bnsArea}
+        or bns_addr != #{bnsAddr}
+        or bns_money != #{bnsMoney})
+    </update>
+
+</mapper>

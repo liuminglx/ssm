@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.zhirun.ssm.dao.UserModelMapper">
+  <resultMap id="BaseResultMap" type="cn.com.zhirun.ssm.model.UserModel">
+    <id column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_pwd" jdbcType="VARCHAR" property="userPwd" />
+    <result column="user_create_date" jdbcType="VARCHAR" property="userCreateDate" />
+    <result column="user_comment" jdbcType="VARCHAR" property="userComment" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_user_test
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.com.zhirun.ssm.model.UserModel">
+    insert into t_user_test (user_id, user_name, user_pwd, 
+      user_create_date, user_comment)
+    values (#{userId,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userPwd,jdbcType=VARCHAR}, 
+      #{userCreateDate,jdbcType=VARCHAR}, #{userComment,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.com.zhirun.ssm.model.UserModel">
+    update t_user_test
+    set user_name = #{userName,jdbcType=VARCHAR},
+      user_pwd = #{userPwd,jdbcType=VARCHAR},
+      user_create_date = #{userCreateDate,jdbcType=VARCHAR},
+      user_comment = #{userComment,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select user_id, user_name, user_pwd, user_create_date, user_comment
+    from t_user_test
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select user_id, user_name, user_pwd, user_create_date, user_comment
+    from t_user_test
+  </select>
+  <select id="createUserId" resultMap="BaseResultMap">
+    select user_id
+    from t_user_test
+  </select>
+</mapper>

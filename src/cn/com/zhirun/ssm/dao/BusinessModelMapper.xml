@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.zhirun.ssm.dao.BusinessModelMapper">
+  <resultMap id="BaseResultMap" type="cn.com.zhirun.ssm.model.BusinessModel">
+    <id column="bns_id" jdbcType="VARCHAR" property="bnsId" />
+    <result column="bns_name" jdbcType="VARCHAR" property="bnsName" />
+    <result column="bns_tel" jdbcType="VARCHAR" property="bnsTel" />
+    <result column="bns_group" jdbcType="VARCHAR" property="bnsGroup" />
+    <result column="bns_area" jdbcType="VARCHAR" property="bnsArea" />
+    <result column="bns_addr" jdbcType="VARCHAR" property="bnsAddr" />
+    <result column="bns_money" jdbcType="DOUBLE" property="bnsMoney" />
+    <result column="bns_create_date" jdbcType="VARCHAR" property="bnsCreateDate" />
+    <result column="bns_update_date" jdbcType="VARCHAR" property="bnsUpdateDate" />
+    <result column="bns_deleflg" jdbcType="INTEGER" property="bnsDeleflg" />
+    <result column="bns_comment" jdbcType="VARCHAR" property="bnsComment" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_business_test
+    where bns_id = #{bnsId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.com.zhirun.ssm.model.BusinessModel">
+    insert into t_business_test (bns_id, bns_name, bns_tel, 
+      bns_group, bns_area, bns_addr, 
+      bns_money, bns_create_date, bns_update_date, 
+      bns_deleflg, bns_comment)
+    values (#{bnsId,jdbcType=VARCHAR}, #{bnsName,jdbcType=VARCHAR}, #{bnsTel,jdbcType=VARCHAR}, 
+      #{bnsGroup,jdbcType=VARCHAR}, #{bnsArea,jdbcType=VARCHAR}, #{bnsAddr,jdbcType=VARCHAR}, 
+      #{bnsMoney,jdbcType=DOUBLE}, #{bnsCreateDate,jdbcType=VARCHAR}, #{bnsUpdateDate,jdbcType=VARCHAR}, 
+      #{bnsDeleflg,jdbcType=INTEGER}, #{bnsComment,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.com.zhirun.ssm.model.BusinessModel">
+    update t_business_test
+    set bns_name = #{bnsName,jdbcType=VARCHAR},
+      bns_tel = #{bnsTel,jdbcType=VARCHAR},
+      bns_group = #{bnsGroup,jdbcType=VARCHAR},
+      bns_area = #{bnsArea,jdbcType=VARCHAR},
+      bns_addr = #{bnsAddr,jdbcType=VARCHAR},
+      bns_money = #{bnsMoney,jdbcType=DOUBLE},
+      bns_create_date = #{bnsCreateDate,jdbcType=VARCHAR},
+      bns_update_date = #{bnsUpdateDate,jdbcType=VARCHAR},
+      bns_deleflg = #{bnsDeleflg,jdbcType=INTEGER},
+      bns_comment = #{bnsComment,jdbcType=VARCHAR}
+    where bns_id = #{bnsId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select bns_name, bns_tel, bns_group, bns_area, bns_addr, bns_money, bns_create_date,
+    bns_update_date, bns_deleflg, bns_comment
+    from t_business_test
+    where bns_id = #{bnsId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select bns_id, bns_name, bns_tel, bns_group, bns_area, bns_addr, bns_money, bns_create_date, 
+    bns_update_date, bns_deleflg, bns_comment
+    from t_business_test
+  </select>
+</mapper>

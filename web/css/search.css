@@ -1,0 +1,442 @@
+/*初始化*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.test {
+    overflow: hidden;
+}
+
+.head {
+    height: 60px;
+    padding: 0 5%;
+}
+
+.head-div {
+    overflow: hidden;
+}
+
+.head-l {
+    float: left;
+    line-height: 60px;
+}
+
+.head-l img {
+    width: 100%;
+    height: 58px;
+}
+
+.head-m {
+    float: left;
+    font-family: "Microsoft YaHei";
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    /*padding-left: 200px;
+    padding-top: 20px;*/
+}
+
+.head-r {
+    float: right;
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    text-align: right;
+    line-height: 60px;
+    /*padding-left: 20
+
+    /*padding-left: 260px;
+    padding-top: 20px;*/
+}
+
+.nav {
+    height: 50px;
+    padding: 0 5%;
+    background-color: #5bc0de;
+}
+
+.nav a {
+    display: block;
+}
+
+.nav-ul-li-l a:hover {
+    background-size: 20px 20px;
+}
+
+.nav-ul-li-l {
+    float: left;
+    padding-left: 50px;
+    /* padding-top: 20px; */
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    line-height: 50px;
+}
+
+.nav-ul-li-l ul { /* 隐藏下拉菜单 */
+    display: none;
+    position: absolute;
+}
+
+.nav-ul-li-l .dropdown-menu {
+    margin: 0;
+}
+
+.nav-ul-li-l:hover .dropdown-menu {
+    display: block;
+}
+
+.title {
+    /* height: 200px;
+     width: 90%;*/
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 16%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    width: 100%;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*border: 1px solid #ccc;*/
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.dropdown-menu span:hover {
+    font-size: 20px;
+    color: red;
+}
+
+a:hover {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.xl {
+    height: 100px;
+    width: 60%;
+    margin: 0 auto;
+    line-height: 100px;
+    /*overflow: hidden;*/
+}
+
+.xldiv-l {
+    width: 50%;
+    border-right: 1px solid black;
+    float: left;
+    text-align: center;
+}
+
+.xldiv-r {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.xltp-l {
+    width: 50px;
+    height: 50px;
+    /*margin-left: 150px;
+    margin-top: 20px;*/
+}
+
+.xltp-r {
+    width: 40px;
+    height: 40px;
+}
+
+.xl span {
+    color: black;
+}
+
+.xl a {
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);;
+}
+
+.xlsp-l {
+    /*margin-left: 20px;
+    margin-top: 20px;*/
+    line-height: 100px;
+}
+
+.xlsp-r {
+    /*margin-top: 20px;
+    margin-right: 200px;*/
+}
+
+.nav-ul-r {
+    float: right;
+    color: yellow;
+    margin-top: 15px;
+}
+
+.foot {
+    height: 150px;
+    padding: 0 5%;
+    background-color: black;
+}
+
+.foot li {
+    color: silver;;
+    text-align: center;
+    line-height: 30px;
+}
+
+.foot-div {
+    overflow: hidden;
+}
+
+.foot-div-l {
+    float: right;
+    margin-top: 20px;
+}
+
+.foot-div-r {
+    float: left;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.foot-span {
+    border-left: 1px solid silver;
+    margin-left: 2px;
+    padding-left: 5px;
+}
+
+.div-login {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url("../images/image12.jpg");
+    background-size: 100% 100%;
+    padding: 40px 0;
+    /*overflow: hidden;*/
+}
+
+.login-dl {
+    width: 1000px;
+    /*height: 620px;*/
+    /*position: absolute;*/
+    margin-left: 160px;
+    /*margin-top: 35px;*/
+    /*margin-left: -500px;*/
+    /*left: 50%;*/
+    overflow: hidden;
+    background-color: #5bc0de;
+}
+
+.login-ul-l {
+    float: left;
+    padding-top: 30px;
+    padding-left: 50px;
+
+}
+
+/*.login-tb .table-body {*/
+    /*margin-left: 20px;*/
+    /*width: 95%;*/
+    /*text-align: center;*/
+/*}*/
+
+.login-ul-m {
+    float: left;
+    padding-left: 50px
+}
+
+.login-ul-r {
+    clear: both;
+    padding-left: 160px;
+}
+
+.login-lbl {
+    text-align: right;
+    width: 100px;
+    height: 10px;
+}
+
+.login-btn {
+    width: 45px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    background-color: gray;
+    margin-left: 40px;
+}
+
+.check {
+    width: 30px;
+    color: red;
+}
+
+.reg-div {
+    overflow: hidden;
+    width: 950px;
+    height: 220px;
+}
+
+.control-label {
+    width: 100px;
+    height: 20px;
+    text-align: right;
+}
+
+.form-control {
+    width: 200px;
+    height: 30px;
+}
+
+.reg-ul {
+    overflow: hidden;
+    padding-top: 2px;
+}
+
+.form-control {
+    padding: 0 6px 0;
+}
+
+.reg-li {
+    padding-top: 10px;
+    overflow: hidden;
+}
+
+.reg-li * {
+    float: left;
+}
+
+.reg-li span {
+    width: 30px;
+}
+
+.reg-ul .address {
+    width: 500px;
+}
+
+.btn-default1 {
+    margin-left: 245px;
+    color: white;
+}
+
+.btn-clear {
+    background-color: crimson;
+    color: white;
+}
+
+.btn-search {
+    background-color: #1b6d85;
+}
+
+.btn {
+    border: 0;
+}
+
+.hr-1 {
+    height: 1px;
+    border: none;
+    border-top: 1px dashed white;
+    margin-left: 20px;
+}
+
+.login-tb {
+    overflow: hidden;
+    padding: 0 2%;
+    text-align: center;
+}
+
+.shuzi {
+    color: red;
+}
+
+.search-ul {
+    width: 900px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.search-ul input, .search-ul .search-lbl-l {
+    float: left;
+}
+
+.search-ul .search-lbl-l {
+    margin: 8px 0 0 20px;
+}
+
+.search-lbl-r {
+    float: right;
+    margin: 8px 20px 0 0;
+}
+
+/*.div-table {*/
+/*width: 900px;*/
+/*height: 260px;*/
+/*!*border: 1px solid red;*!*/
+/*margin: 10px auto 0;*/
+/*text-align: center;*/
+/*}*/
+
+.table-head * {
+    text-align: center;
+}
+
+.table-btn {
+    color: white;
+}
+
+.btn-update {
+    background-color: limegreen;
+    color: white;
+}
+
+.pager input {
+    border-radius: 10px;
+    width: 40px;
+    height: 30px;
+}
+
+.pager select {
+    border-radius: 5px;
+    width: 40px;
+    height: 30px;
+}
+
+.pager a {
+    border-radius: 5px;
+}
+
+.pager li > a, .pager li > span {
+    border-radius: 5px;
+}
+
+.btn-exit {
+    background-color: #ac2925;
+    margin-left: 224px;
+}
